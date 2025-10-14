@@ -1,18 +1,47 @@
-# 🧬 Antigen–Antibody Complex Alignment and Clustering Pipeline
+# HCV E2 Antibody Orientation & Clustering
 
-This repository provides a complete structural analysis workflow for **antigen–antibody complexes** (e.g., HCV E2–Fab).  
-It automates **PDB download, chain filtering, structure alignment, orientation angle computation, and clustering** based on antibody approach geometry.
+Quantifies and clusters HCV **E2-specific antibodies** by binding orientation.
 
----
+- **Inclination angle (φ)**: angle between lines from E2 COM to Fv COMs of two antibodies. Small φ ⇒ same antigenic region; large φ ⇒ different epitopes.
+- **Approach angle (ψ)** (FRLY only): minimal rotation to align one Fab to another; distinguishes approach modes within the same region.
 
-## 📂 Overview of Pipeline
+## Figure
+![Clustering overview](docs/figure1.png)
 
-### 1️⃣ Download and Preprocess PDBs
-**Script:** `download_and_filter_structures.py`
+## Files & Folders
+```
+.
+├── input.csv
+├── pt1_save_pdbs.ipynb
+├── pt2_align_E2_regions.ipynb
+├── pt3_clustering.ipynb
+├── inclination_angle.csv
+└── FRLY_Abs/
+    ├── input.csv
+    ├── pt1_save_pdbs.ipynb
+    ├── pt2_align_E2_regions.ipynb
+    ├── pt3_clustering.ipynb
+    └── approach_angle.csv
+```
 
-- Reads `input.csv` with columns:  
-  `pdb_id, antigen_chain, heavy_chain, light_chain, antibody`
-- Downloads PDBs using Biopython’s `PDBList`
-- Extracts only specified chains (Ag, heavy, light) and removes heteroatoms/water
-- Renumbers residues using **ANARCI’s ImmunoPDB** for consistent numbering
-- **Output:**  
+## Input Format (`input.csv`)
+```
+pdb_id,antigen_chain,heavy_chain,light_chain,antibody
+4mwf,C,H,L,AR3C(4mwf)
+4web,E,H,L,2A12(4web)
+6bkb,E,H,L,AR3A(6bkb)
+...
+```
+
+## Usage
+1. Run **pt1_save_pdbs.ipynb** to download PDBs from `input.csv`.
+2. Run **pt2_align_E2_regions.ipynb** to align on E2 (reference: 4mwf).
+3. Run **pt3_clustering.ipynb** to compute pairwise angles and cluster.
+4. For FRLY antibodies, repeat steps 1–3 inside `FRLY_Abs/` (ψ).
+
+## Precomputed
+- `inclination_angle.csv` (φ)
+- `FRLY_Abs/approach_angle.csv` (ψ)
+
+## Contact
+rjtpunia@cornell.edu
