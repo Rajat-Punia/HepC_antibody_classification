@@ -24,9 +24,7 @@
 │   ├── pt1_save_pdbs.ipynb
 │   ├── pt2_align_E2_regions.ipynb
 │   ├── pt3_clustering.ipynb          # Computes ψ and performs clustering
-│   └── approach_angle.csv            # Precomputed ψ values
-└── docs/
-    └── figure1.png           
+│   └── approach_angle.csv            # Precomputed ψ values         
 ```
 
 ---
