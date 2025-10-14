@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+.ipynb_checkpoints/
+build/
+dist/
+
+# Jupyter
+*.nbconvert.ipynb
+
+# Data (keep small sample files, not huge raw data)
+data/raw/
+*.csv.zip
+*.tar.gz
