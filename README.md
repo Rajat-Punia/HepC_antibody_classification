@@ -10,7 +10,7 @@
 > ![Clustering overview](docs/figure1.png)
 
 
-## Repository Layout
+### Repository Layout
 
 ```
 .
@@ -31,7 +31,7 @@
 
 ---
 
-## 🧾 Input Format
+### Input Format
  `input.csv`:
 
 ```
@@ -56,22 +56,17 @@
 2. **`pt2_align_E2_regions.ipynb`** – aligns on antigen chain of reference PDB **4mwf**.  
 3. **`pt3_clustering.ipynb`** – computes pairwise inclination angles and clusters antibodies.
 
-#### **FRLY Antibodies (ψ)**
+##### **FRLY Antibodies (ψ)**
 Run all three notebooks inside the `FRLY_Abs/` directory.
 
-## Precomputed Angles
+### Precomputed Angles
 
 - `inclination_angle.csv` – pairwise φ (all antibodies)  
 - `FRLY_Abs/approach_angle.csv` – pairwise ψ (FRLY subset)
 
 
-##  Contact
+###  Contact
 
 For questions or inquiries:  
 📧 **rjtpunia@cornell.edu**
 
----
-
-## Acknowledgements
-
-PDB structures from **RCSB PDB**.  
