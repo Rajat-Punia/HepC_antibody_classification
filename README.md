@@ -1,4 +1,4 @@
-# Clustering Hepatitis C Virus (HCV) **E2-specific antibodies** by their binding orientations using two complementary geometric metrics:
+## Clustering Hepatitis C Virus (HCV) **E2-specific antibodies** by their binding orientations using two complementary geometric metrics
 
 - **Inclination angle (φ)** – between Fv regions of antibodies relative to the E2 center of mass.  
   → Smaller φ indicates targeting the same antigenic region (aligned orientations).  
